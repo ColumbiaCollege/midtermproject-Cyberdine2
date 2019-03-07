@@ -1,4 +1,5 @@
 Target[] Frosty = new Target[10];
+Spaceship[] imageArray = new Spaceship[10];
 
 
 //for (int i = 0; i<5; i++) {
@@ -17,18 +18,27 @@ boolean levelBounce;
 int ammo = 15;
 int screen =0;
 
+
+
 void setup() {
   imageMode(CENTER);
   duck = loadImage("duck4flipped.JPG");
   duck2 = loadImage("duck4.JPG");
   grass = loadImage("grasscut.JPG");
+ 
+
+ 
   size(1920, 480);
   levelBounce = false;
   lowBound =1;
   highBound =5;
   for (int i = 0; i<10; i++) {
     Frosty[i] = new Target(lowBound, highBound);
+    imageArray[i] = new Spaceship(lowBound, highBound);
   }
+  
+  
+  
 }
 
 
@@ -44,6 +54,14 @@ void draw() {
       Frosty[i].display();
       Frosty[i].move();
       Frosty[i].bounce();
+      
+          
+      imageArray[i].display();
+     imageArray[i].move();
+      imageArray[i].bounce();
+         
+
+      
     }
 
     image(grass, 1000, 500, width+100, height/2);
@@ -87,35 +105,6 @@ void repopulate() {
   ammo = 15+(level*2);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class Spaceship {
   
   PImage[] imageArray;
@@ -126,6 +115,8 @@ public class Spaceship {
   int framecounter;
   int drawframe;
   boolean dead;
+  float highbound;
+  float lowbound;
 
   Spaceship(float lowBound, float highBound) {
     imageArray = new PImage[10]; 
@@ -135,6 +126,24 @@ public class Spaceship {
     Vspeed = random(lowBound, highBound);
     drawframe = 0;
     framecounter = 0;
+    lowbound =1;
+    highbound =5;
+    
+
+    
+     
+     
+imageArray[0] = loadImage("1.jpg");
+imageArray[1] = loadImage("2.jpg");
+imageArray[2] = loadImage("3.jpg");
+imageArray[3] = loadImage("4.jpg");
+imageArray[4] = loadImage("5.jpg");
+imageArray[5] = loadImage("6.jpg");
+imageArray[6] = loadImage("7.jpg");
+imageArray[7] = loadImage("8.jpg");
+imageArray[8] = loadImage("9.jpg");
+imageArray[9] = loadImage("10.jpg");
+    
   }
   
   void display() {
@@ -145,7 +154,7 @@ public class Spaceship {
       drawframe++;
       drawframe = drawframe % 10;
     }
-
+    
     switch(drawframe) {
     case 0: 
       image(imageArray[0], x, y); 
@@ -177,8 +186,11 @@ public class Spaceship {
     case 9: 
       image(imageArray[9], x, y);
       break;
-    }
+    
+  
+}
   }
+  
 
   void bounce() {
 
@@ -208,13 +220,6 @@ public class Spaceship {
     }
   }
 }
-
-
-
-
-
-
-
 
 
 
