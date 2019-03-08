@@ -18,7 +18,7 @@ float highBound;
 float lowBound;
 boolean levelBounce;
 int ammo = 15;
-//I needed a way to loose, so chriss recommended some ammo. Since this is involved with many of the games
+//I needed a way to lose, so chriss recommended some ammo. Since this is involved with many of the games
 //I luv and enjoy I thuroughly agreed it needed ammo. Eventually the ships I'd like 
 //to get more ammo too.... But for now proof of concpt ships can move and animte
 //but will have a ussfull funtion to the game as well
