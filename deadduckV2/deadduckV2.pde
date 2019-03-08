@@ -5,8 +5,8 @@
 Target[] Frosty = new Target[10];
 //We named those targets Frosty
 Spaceship[] imageArray = new Spaceship[10];
-//Then I named some new Targets (clickable pads) i named "Spaceships". These are all used as objects.
-///}
+//Then I named some new Targets (clickable pads) i named "Spaceships" and "Frosty". These are all used as objects.
+/// and the "Spaceships" are not clickable yet.
 PImage duck;
 PImage duck2;
 //Since this game is based onNintendo Duckhunt we loaded PImages caled "duck1" and "duck2"
